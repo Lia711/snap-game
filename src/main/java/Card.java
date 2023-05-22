@@ -1,4 +1,4 @@
-public abstract class Card {
+public class Card {
     private String suit;
     private String symbol;
     private int value;
@@ -7,5 +7,10 @@ public abstract class Card {
         this.suit = suit;
         this.symbol = symbol;
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return this.suit + this.symbol + " value: " + this.value;
     }
 }

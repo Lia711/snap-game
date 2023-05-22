@@ -1,9 +1,15 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CardGame {
-    private ArrayList<Card> cards = new ArrayList<>();
+    public ArrayList<Card> cardsArr = new ArrayList<>();
 
-    private ArrayList<Card> getDeck() {
-        return cards;
+    public void addCard(Card card) {
+        cardsArr.add(card);
+
+    }
+
+    public ArrayList<Card> getDeck() {
+        return cardsArr;
     }
 }
