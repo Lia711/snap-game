@@ -26,10 +26,15 @@ public class CardGame {
         Collections.sort(cardsArr, new SortBySuit());
         return cardsArr;
     }
+Card dealtCard;
 
     public Card dealCard() {
-        Card dealtCard = cardsArr.get(cardsArr.size()-1);
+        dealtCard = cardsArr.get(cardsArr.size()-1);
         cardsArr.remove(dealtCard);
+        return dealtCard;
+    }
+
+    public Card returnCard() {
         return dealtCard;
     }
 
