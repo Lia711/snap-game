@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82691536-7047-4687-b3c8-444e1a81a9cf" name="Changes" comment="Added card dealing method.">
+    <list default="true" id="82691536-7047-4687-b3c8-444e1a81a9cf" name="Changes" comment="Began implementing user interaction.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CardGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
@@ -81,13 +81,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684852962892</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Began implementing user interaction.">
+      <created>1684855787096</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684855787096</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Began setting up card creation" />
     <MESSAGE value="Added methods for sorting and shuffling cards." />
     <MESSAGE value="Added card dealing method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added card dealing method." />
+    <MESSAGE value="Began implementing user interaction." />
+    <option name="LAST_COMMIT_MESSAGE" value="Began implementing user interaction." />
   </component>
 </project>

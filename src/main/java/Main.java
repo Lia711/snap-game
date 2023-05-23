@@ -16,23 +16,36 @@ public class Main {
             System.out.println(game.shuffleDeck());
             gamePlay = true;
         }
+        String currentSuit = "";
+        String nextSuit = " ";
         while (gamePlay) {
-            System.out.println("Press enter to deal card.");
-            String input = interaction.readInput();
-            if (input.equals("")) {
-                System.out.println(game.dealCard());
+            if (currentSuit!=nextSuit) {
+                System.out.println("Press enter to deal card.");
+                String input = interaction.readInput();
+                if (input.equals("")) {
+                    System.out.println(game.dealCard());
+                    currentSuit= game.returnSuit();
+                    if (currentSuit!=nextSuit) {
+                        nextSuit=currentSuit;
+                        currentSuit="";
+                    } else {
+                        System.out.println("win");
+                        gamePlay=false;
+                    }
             }
 
-            //}
 
 
-            //System.out.println(game.getDeck());
-            //System.out.println(game.shuffleDeck());
-            //System.out.println(game.sortCardsByValue());
-            //System.out.println(game.sortCardsBySuit());
-            //System.out.println(game.dealCard());
-            //System.out.println(game.returnCard());
 
+
+                //System.out.println(game.getDeck());
+                //System.out.println(game.shuffleDeck());
+                //System.out.println(game.sortCardsByValue());
+                //System.out.println(game.sortCardsBySuit());
+                //System.out.println(game.dealCard());
+                //System.out.println(game.returnCard());
+
+            }
         }
     }
 }

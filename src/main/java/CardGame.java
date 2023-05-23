@@ -34,8 +34,8 @@ Card dealtCard;
         return dealtCard;
     }
 
-    public Card returnCard() {
-        return dealtCard;
+    public String returnSuit() {
+        return dealtCard.getSuit();
     }
 
 
