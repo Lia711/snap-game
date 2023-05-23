@@ -6,7 +6,6 @@ public class CardGame {
 
     public void addCard(Card card) {
         cardsArr.add(card);
-
     }
 
     public ArrayList<Card> getDeck() {
@@ -28,7 +27,11 @@ public class CardGame {
         return cardsArr;
     }
 
-
+    public Card dealCard() {
+        Card dealtCard = cardsArr.get(cardsArr.size()-1);
+        cardsArr.remove(dealtCard);
+        return dealtCard;
+    }
 
 
 }

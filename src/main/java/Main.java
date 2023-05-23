@@ -11,6 +11,8 @@ public class Main {
         System.out.println(game.shuffleDeck());
         System.out.println(game.sortCardsByValue());
         System.out.println(game.sortCardsBySuit());
+        System.out.println(game.dealCard());
+        System.out.println(game.getDeck());
 
     }
 }
