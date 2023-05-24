@@ -5,12 +5,14 @@ public class SnapTwoPlayer extends Snap {
     boolean win = false;
     boolean gamePlay = false;
 
+    int playerTurn=0;
+
     public void snapOpportunity() {
         System.out.println("Snap Opportunity! Enter \"snap\" into the keyboard!");
         Scanner snapObj = new Scanner(System.in);
         String snap = snapObj.nextLine();
         if (Objects.equals(snap, "snap")) {
-                System.out.println("Congratulations! P1 has won.");
+                System.out.println("Congratulations! P" + playerTurn + " has won.");
                 gamePlay = false;
             }
 
@@ -37,13 +39,13 @@ public class SnapTwoPlayer extends Snap {
             if (inputP1.equals("")) {
                 System.out.println(dealCard());
                 currentSuitP1 = returnSuit();
+                playerTurn=1;
                 if (currentSuitP1 != nextSuitP1) {
                     nextSuitP1 = currentSuitP1;
                     currentSuitP1 = "";
                 } else {
                     snapOpportunity();
-                    break;
-
+                    //break;
 
                     //gamePlay = false;
                 }
@@ -54,15 +56,13 @@ public class SnapTwoPlayer extends Snap {
             if (inputP2.equals("")) {
                 System.out.println(dealCard());
                 currentSuitP2 = returnSuit();
+                playerTurn=2;
                 if (currentSuitP2 != nextSuitP2) {
                     nextSuitP2 = currentSuitP2;
                     currentSuitP2 = "";
                 } else {
                     snapOpportunity();
-                    if (win) {
-                        System.out.println("Congratulations! P2 has won.");
-                        gamePlay=false;
-                    }
+                    //break;
                 }
 
 
