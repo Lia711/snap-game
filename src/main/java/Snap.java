@@ -23,6 +23,7 @@ public class Snap extends CardGame {
         }
         String currentSuit = "";
         String nextSuit = " ";
+        int turnCount = 0;
         while (gamePlay) {
             System.out.println("Press enter to deal card.");
             Scanner myObj2 = new Scanner(System.in);
@@ -33,8 +34,9 @@ public class Snap extends CardGame {
                 if (currentSuit!=nextSuit) {
                     nextSuit=currentSuit;
                     currentSuit="";
+                    turnCount++;
                 } else {
-                    System.out.println("win");
+                    System.out.println("Congratulations! You've won after " + turnCount + " rounds.");
                     gamePlay=false;
                 }
             }
