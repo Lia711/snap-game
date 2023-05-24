@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         boolean noGame = true;
-        CardGame game = new CardGame();
+        SnapTwoPlayer snap2 = new SnapTwoPlayer();
         Snap snap = new Snap();
         System.out.println("Press 1 to generate a deck.");
         Scanner myObj = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class Main {
                 System.out.println(snap.sortCardsBySuit());
             } else if (number2 == 4) {
                 noGame=false;
-                snap.playGame();
+                snap2.playGame();
             }
 
         }
