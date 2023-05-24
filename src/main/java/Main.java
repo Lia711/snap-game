@@ -1,51 +1,33 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        boolean gamePlay = false;
         CardGame game = new CardGame();
-        Interaction interaction = new Interaction();
-        for (Suits suit : Suits.values()) {
-            for (Values value : Values.values()) {
-                Card card = new Card(suit.getSuit(), value.getSymbol(), value.getValue());
-                game.addCard(card);
-            }
-        }
-
-        System.out.println("Press 1 to shuffle deck.");
-        int number = interaction.readNumber();
+        Snap snap = new Snap();
+        System.out.println("Press 1 to generate a deck.");
+        Scanner myObj = new Scanner(System.in);
+        int number = myObj.nextInt();
         if (number == 1) {
-            System.out.println(game.shuffleDeck());
-            gamePlay = true;
+            snap.makeDeck();
+            System.out.println(snap.getDeck());
         }
-        String currentSuit = "";
-        String nextSuit = " ";
-        while (gamePlay) {
-            if (currentSuit!=nextSuit) {
-                System.out.println("Press enter to deal card.");
-                String input = interaction.readInput();
-                if (input.equals("")) {
-                    System.out.println(game.dealCard());
-                    currentSuit= game.returnSuit();
-                    if (currentSuit!=nextSuit) {
-                        nextSuit=currentSuit;
-                        currentSuit="";
-                    } else {
-                        System.out.println("win");
-                        gamePlay=false;
-                    }
-            }
-
-
-
-
-
-                //System.out.println(game.getDeck());
-                //System.out.println(game.shuffleDeck());
-                //System.out.println(game.sortCardsByValue());
-                //System.out.println(game.sortCardsBySuit());
-                //System.out.println(game.dealCard());
-                //System.out.println(game.returnCard());
-
-            }
+        System.out.println("Options:\nPress 1 to shuffle deck.\nPress 2 to sort cards by value.\nPress 3 to sort cards by suit.\nPress 4 to play a game of snap.");
+        Scanner myObj2 = new Scanner(System.in);
+        int number2 = myObj2.nextInt();
+        if (number2 == 1) {
+            System.out.println(snap.shuffleDeck());
+        } else if (number2 == 2) {
+            System.out.println(snap.sortCardsByValue());
+        } else if (number2 == 3) {
+            System.out.println(snap.sortCardsBySuit());
+        } else if (number2 == 4) {
+            //Snap snap = new Snap();
+            snap.playGame();
         }
+        //Snap snap = new Snap();
+        //snap.playGame();
     }
-}
+
+
+        }
+
+
