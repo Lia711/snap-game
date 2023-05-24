@@ -1,8 +1,22 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class SnapTwoPlayer extends Snap {
+    boolean win = false;
+    boolean gamePlay = false;
+
+    public void snapOpportunity() {
+        System.out.println("Snap Opportunity! Enter \"snap\" into the keyboard!");
+        Scanner snapObj = new Scanner(System.in);
+        String snap = snapObj.nextLine();
+        if (Objects.equals(snap, "snap")) {
+                System.out.println("Congratulations! P1 has won.");
+                gamePlay = false;
+            }
+
+        }
+
     public void playGame() {
-        boolean gamePlay = false;
         makeDeck();
 
         System.out.println("Press 1 to shuffle deck.");
@@ -27,8 +41,10 @@ public class SnapTwoPlayer extends Snap {
                     nextSuitP1 = currentSuitP1;
                     currentSuitP1 = "";
                 } else {
-                    System.out.println("Congratulations! P1 has won.");
+                    snapOpportunity();
                     break;
+
+
                     //gamePlay = false;
                 }
             }
@@ -42,8 +58,11 @@ public class SnapTwoPlayer extends Snap {
                     nextSuitP2 = currentSuitP2;
                     currentSuitP2 = "";
                 } else {
-                    System.out.println("Congratulations! P2 has won.");
-                    gamePlay = false;
+                    snapOpportunity();
+                    if (win) {
+                        System.out.println("Congratulations! P2 has won.");
+                        gamePlay=false;
+                    }
                 }
 
 
