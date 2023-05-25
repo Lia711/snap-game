@@ -2,23 +2,26 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class SnapTwoPlayer extends Snap {
-    boolean win = false;
     boolean gamePlay = false;
 
     int playerTurn=0;
 
-    public void snapOpportunity() {
-        System.out.println("Snap Opportunity! Enter \"snap\" into the keyboard!");
-        Scanner snapObj = new Scanner(System.in);
-        String snap = snapObj.nextLine();
-        if (Objects.equals(snap, "snap")) {
+    TimedAnswer snapp = new TimedAnswer();
+
+    public boolean snapOpportunity() throws Exception {
+        snapp.getInput();
+        //System.out.println("Snap Opportunity! Enter \"snap\" into the keyboard!");
+        //Scanner snapObj = new Scanner(System.in);
+        //String snap = snapObj.nextLine();
+        System.out.println(snapp.returnStr());
+        if (snapp.returnStr().equals("snap")) {
                 System.out.println("Congratulations! P" + playerTurn + " has won.");
-                gamePlay = false;
-            }
+               return true;
+            } return false;
 
         }
 
-    public void playGame() {
+    public void playGame() throws Exception {
         makeDeck();
 
         System.out.println("Press 1 to shuffle deck.");
@@ -33,6 +36,7 @@ public class SnapTwoPlayer extends Snap {
         String currentSuitP2 = "";
         String nextSuitP2 = " ";
         while (gamePlay) {
+            System.out.println(gamePlay);
             System.out.println("P1 press enter to deal card.");
             Scanner myObj2 = new Scanner(System.in);
             String inputP1 = myObj2.nextLine();
@@ -44,8 +48,13 @@ public class SnapTwoPlayer extends Snap {
                     nextSuitP1 = currentSuitP1;
                     currentSuitP1 = "";
                 } else {
-                    snapOpportunity();
-                    //break;
+                    boolean isSnap = snapOpportunity();
+                    System.out.println(isSnap);
+                    if (isSnap) {
+                        this.gamePlay=false;
+                        System.out.println(gamePlay);
+                        break;
+                    }
 
                     //gamePlay = false;
                 }
@@ -61,13 +70,19 @@ public class SnapTwoPlayer extends Snap {
                     nextSuitP2 = currentSuitP2;
                     currentSuitP2 = "";
                 } else {
-                    snapOpportunity();
-                    //break;
+                    boolean isSnap = snapOpportunity();
+                    System.out.println(isSnap);
+                    if (isSnap) {
+                        this.gamePlay=false;
+                        System.out.println(gamePlay);
+                        break;
+                    }
                 }
 
 
             }
         }
+        System.out.println("continue");
     }
 }
 

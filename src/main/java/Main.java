@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         boolean noGame = true;
         SnapTwoPlayer snap2 = new SnapTwoPlayer();
         Snap snap = new Snap();

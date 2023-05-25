@@ -10,7 +10,7 @@ public class Snap extends CardGame {
         }
     }
 
-    public void playGame() {
+    public void playGame() throws Exception {
         boolean gamePlay = false;
         makeDeck();
 
