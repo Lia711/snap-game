@@ -1,4 +1,3 @@
-import java.util.Objects;
 import java.util.Scanner;
 
 public class SnapTwoPlayer extends Snap {
@@ -8,7 +7,7 @@ public class SnapTwoPlayer extends Snap {
         System.out.println("Snap Opportunity! Enter \"snap\" into the keyboard!");
         String snap = scanner.nextLine();
         if (snap.equals("snap")) {
-            System.out.println("Congratulations! P" + playerTurn + " has won.");
+            System.out.println("Congratulations! " + playerTurn + " has won.");
             return true;
         }
         System.out.println("Incorrect! Continuing game...");
@@ -16,7 +15,9 @@ public class SnapTwoPlayer extends Snap {
     }
 
     boolean gamePlay = false;
-    int playerTurn = 0;
+    String playerTurn = "";
+    String playerName1 = "";
+    String playerName2 = "";
 
     public void playGame() {
         boolean playAgain = true;
@@ -24,6 +25,10 @@ public class SnapTwoPlayer extends Snap {
             boolean gamePlay = false;
             makeDeck();
             boolean noBegin = true;
+            System.out.println("Enter player 1 name:");
+            playerName1 = scanner.nextLine();
+            System.out.println("Enter player 2 name:");
+            playerName2 = scanner.nextLine();
             while (noBegin) {
                 System.out.println("Press 1 to shuffle deck.");
                 String begin = scanner.nextLine();
@@ -40,12 +45,12 @@ public class SnapTwoPlayer extends Snap {
             String currentSuitP2 = "";
             String nextSuitP2 = " ";
             while (gamePlay) {
-                System.out.println("P1 press enter to deal card.");
+                System.out.println(playerName1 + " ,press enter to deal card.");
                 String inputP1 = scanner.nextLine();
                 if (inputP1.equals("")) {
                     System.out.println(dealCard());
                     currentSuitP1 = returnSuit();
-                    playerTurn = 1;
+                    playerTurn = playerName1;
                     if (currentSuitP1 != nextSuitP1) {
                         nextSuitP1 = currentSuitP1;
                         currentSuitP1 = "";
@@ -57,12 +62,12 @@ public class SnapTwoPlayer extends Snap {
                         }
                     }
                 }
-                System.out.println("P2 press enter to deal card.");
+                System.out.println(playerName2 + " ,press enter to deal card.");
                 String inputP2 = scanner.nextLine();
                 if (inputP2.equals("")) {
                     System.out.println(dealCard());
                     currentSuitP2 = returnSuit();
-                    playerTurn = 2;
+                    playerTurn = playerName2;
                     if (currentSuitP2 != nextSuitP2) {
                         nextSuitP2 = currentSuitP2;
                         currentSuitP2 = "";

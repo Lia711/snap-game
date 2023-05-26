@@ -22,26 +22,26 @@ public class MainGame {
 
         boolean noGame = true;
         while (noGame) {
-                System.out.println("Options:\nPress 1 to shuffle deck.\nPress 2 to sort cards by value.\nPress 3 to sort cards by suit.\nPress 4 to play a single player game of snap.\nPress 5 to play a two player game of snap.");
-                String input = scanner.nextLine();
-                if (input.equals("1")) {
-                    System.out.println(snap.shuffleDeck());
-                } else if (input.equals("2")) {
-                    System.out.println(snap.sortCardsByValue());
-                } else if (input.equals("3")) {
-                    System.out.println(snap.sortCardsBySuit());
-                } else if (input.equals("4")) {
-                    noGame = false;
-                    snap.playGame();
-                    noGame = true;
-                } else if (input.equals("5")) {
-                    noGame = false;
-                    snap2.playGame();
-                    noGame = true;
-                } else System.out.println("Please enter a number between 1 and 5.");
-            }
+            System.out.println("Options:\nPress 1 to shuffle deck.\nPress 2 to sort cards by value.\nPress 3 to sort cards by suit.\nPress 4 to play a single player game of snap.\nPress 5 to play a two player game of snap.");
+            String input = scanner.nextLine();
+            if (input.equals("1")) {
+                System.out.println(snap.shuffleDeck());
+            } else if (input.equals("2")) {
+                System.out.println(snap.sortCardsByValue());
+            } else if (input.equals("3")) {
+                System.out.println(snap.sortCardsBySuit());
+            } else if (input.equals("4")) {
+                noGame = false;
+                snap.playGame();
+                noGame = true;
+            } else if (input.equals("5")) {
+                noGame = false;
+                snap2.playGame();
+                noGame = true;
+            } else System.out.println("Please enter a number between 1 and 5.");
         }
-
     }
+
+}
 
 

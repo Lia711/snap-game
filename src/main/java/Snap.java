@@ -12,23 +12,23 @@ public class Snap extends CardGame {
         }
     }
 
-    public void playGame(){
+    public void playGame() {
         boolean playAgain = true;
         while (playAgain) {
             boolean gamePlay = false;
             makeDeck();
             boolean noBegin = true;
             while (noBegin) {
-                    System.out.println("Press 1 to shuffle deck.");
-                    String begin = scanner.nextLine();
-                    if (begin.equals("1")) {
-                        System.out.println(shuffleDeck());
-                        gamePlay = true;
-                        noBegin = false;
-                    } else {
-                        System.out.println("Incorrect character, try again!");
-                    }
+                System.out.println("Press 1 to shuffle deck.");
+                String begin = scanner.nextLine();
+                if (begin.equals("1")) {
+                    System.out.println(shuffleDeck());
+                    gamePlay = true;
+                    noBegin = false;
+                } else {
+                    System.out.println("Incorrect character, try again!");
                 }
+            }
             String currentSuit = "";
             String nextSuit = " ";
             int turnCount = 0;
@@ -50,16 +50,16 @@ public class Snap extends CardGame {
             }
             boolean noNewGame = true;
             while (noNewGame) {
-                    System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
-                    String playerAnswer = scanner.nextLine();
-                    if (playerAnswer.equals("1")) {
-                        playAgain = true;
-                        noNewGame = false;
-                    } else if (playerAnswer.equals("2")) {
-                        playAgain = false;
-                        noNewGame = false;
-                    } else {
-                        System.out.println("Incorrect character, try again!");
+                System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
+                String playerAnswer = scanner.nextLine();
+                if (playerAnswer.equals("1")) {
+                    playAgain = true;
+                    noNewGame = false;
+                } else if (playerAnswer.equals("2")) {
+                    playAgain = false;
+                    noNewGame = false;
+                } else {
+                    System.out.println("Incorrect character, try again!");
                 }
             }
         }
