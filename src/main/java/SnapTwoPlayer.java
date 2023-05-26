@@ -45,7 +45,7 @@ public class SnapTwoPlayer extends Snap {
             String currentSuitP2 = "";
             String nextSuitP2 = " ";
             while (gamePlay) {
-                System.out.println(playerName1 + " ,press enter to deal card.");
+                System.out.println(playerName1 + ", press enter to deal card.");
                 String inputP1 = scanner.nextLine();
                 if (inputP1.equals("")) {
                     System.out.println(dealCard());
@@ -62,7 +62,7 @@ public class SnapTwoPlayer extends Snap {
                         }
                     }
                 }
-                System.out.println(playerName2 + " ,press enter to deal card.");
+                System.out.println(playerName2 + ", press enter to deal card.");
                 String inputP2 = scanner.nextLine();
                 if (inputP2.equals("")) {
                     System.out.println(dealCard());
