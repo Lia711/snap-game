@@ -27,12 +27,22 @@ public class SnapTwoPlayer extends Snap {
         while (playAgain) {
             makeDeck();
 
-            System.out.println("Press 1 to shuffle deck.");
-            Scanner myObj = new Scanner(System.in);
-            int number = myObj.nextInt();
-            if (number == 1) {
-                System.out.println(shuffleDeck());
-                gamePlay = true;
+            boolean noBegin = true;
+            while (noBegin) {
+                try {
+                    System.out.println("Press 1 to shuffle deck.");
+                    Scanner myObj2 = new Scanner(System.in);
+                    int begin = myObj2.nextInt();
+                    if (begin == 1) {
+                        System.out.println(shuffleDeck());
+                        gamePlay = true;
+                        noBegin=false;
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("You must enter a valid number.");
+                }
+
             }
             String currentSuitP1 = "";
             String nextSuitP1 = " ";
@@ -85,12 +95,24 @@ public class SnapTwoPlayer extends Snap {
 
                 }
             }
-            System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
-            int playerAnswer = myObj.nextInt();
-            if (playerAnswer==1) {
-                playAgain=true;
-            } else if (playerAnswer==2){
-                playAgain=false;
+            boolean noNewGame = true;
+            while (noNewGame) {
+                try {
+                    System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
+                    Scanner myObj5 = new Scanner(System.in);
+                    int playerAnswer = myObj5.nextInt();
+                    if (playerAnswer==1) {
+                        playAgain=true;
+                        noNewGame=false;
+                    } else if (playerAnswer==2){
+                        playAgain=false;
+                        noNewGame=false;
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("You must enter a valid number.");
+                }
+
             }
 
 

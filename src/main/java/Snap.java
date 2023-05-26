@@ -57,14 +57,28 @@ public class Snap extends CardGame {
                 }
 
             }
-            System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
-            Scanner myObj5 = new Scanner(System.in);
-            int playerAnswer = myObj5.nextInt();
-            if (playerAnswer==1) {
-                playAgain=true;
-            } else if (playerAnswer==2){
-                playAgain=false;
+
+
+            boolean noNewGame = true;
+            while (noNewGame) {
+                try {
+                    System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
+                    Scanner myObj5 = new Scanner(System.in);
+                    int playerAnswer = myObj5.nextInt();
+                    if (playerAnswer==1) {
+                        playAgain=true;
+                        noNewGame=false;
+                    } else if (playerAnswer==2){
+                        playAgain=false;
+                        noNewGame=false;
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("You must enter a valid number.");
+                }
+
             }
+
 
         }
 
