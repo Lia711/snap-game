@@ -16,13 +16,26 @@ public class Snap extends CardGame {
             boolean gamePlay = false;
             makeDeck();
 
-            System.out.println("Press 1 to shuffle deck.");
-            Scanner myObj = new Scanner(System.in);
-            int number = myObj.nextInt();
-            if (number == 1) {
-                System.out.println(shuffleDeck());
-                gamePlay = true;
+
+            boolean noBegin = true;
+            while (noBegin) {
+                try {
+                    System.out.println("Press 1 to shuffle deck.");
+                    Scanner myObj2 = new Scanner(System.in);
+                    int begin = myObj2.nextInt();
+                    if (begin == 1) {
+                        System.out.println(shuffleDeck());
+                        gamePlay = true;
+                        noBegin=false;
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("You must enter a valid number.");
+                }
+
             }
+
+
             String currentSuit = "";
             String nextSuit = " ";
             int turnCount = 0;
@@ -45,7 +58,8 @@ public class Snap extends CardGame {
 
             }
             System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
-            int playerAnswer = myObj.nextInt();
+            Scanner myObj5 = new Scanner(System.in);
+            int playerAnswer = myObj5.nextInt();
             if (playerAnswer==1) {
                 playAgain=true;
             } else if (playerAnswer==2){
