@@ -17,74 +17,85 @@ public class SnapTwoPlayer extends Snap {
         return false;
 
     }
-    //boolean newGame = true;
     boolean gamePlay = false;
     int playerTurn=0;
 
     //TimedAnswer snapp = new TimedAnswer();
 
     public void playGame() throws Exception {
-        makeDeck();
+        boolean playAgain = true;
+        while (playAgain) {
+            makeDeck();
 
-        System.out.println("Press 1 to shuffle deck.");
-        Scanner myObj = new Scanner(System.in);
-        int number = myObj.nextInt();
-        if (number == 1) {
-            System.out.println(shuffleDeck());
-            gamePlay = true;
-        }
-        String currentSuitP1 = "";
-        String nextSuitP1 = " ";
-        String currentSuitP2 = "";
-        String nextSuitP2 = " ";
-        while (gamePlay) {
-            //System.out.println(gamePlay);
-            System.out.println("P1 press enter to deal card.");
-            Scanner myObj2 = new Scanner(System.in);
-            String inputP1 = myObj2.nextLine();
-            if (inputP1.equals("")) {
-                System.out.println(dealCard());
-                currentSuitP1 = returnSuit();
-                playerTurn=1;
-                if (currentSuitP1 != nextSuitP1) {
-                    nextSuitP1 = currentSuitP1;
-                    currentSuitP1 = "";
-                } else {
-                    boolean isSnap = snapOpportunity();
-                    //System.out.println(isSnap);
-                    if (isSnap) {
-                        this.gamePlay=false;
-                        //System.out.println(gamePlay);
-                        break;
-                    }
-
-                    //gamePlay = false;
-                }
+            System.out.println("Press 1 to shuffle deck.");
+            Scanner myObj = new Scanner(System.in);
+            int number = myObj.nextInt();
+            if (number == 1) {
+                System.out.println(shuffleDeck());
+                gamePlay = true;
             }
-            System.out.println("P2 press enter to deal card.");
-            Scanner myObj3 = new Scanner(System.in);
-            String inputP2 = myObj3.nextLine();
-            if (inputP2.equals("")) {
-                System.out.println(dealCard());
-                currentSuitP2 = returnSuit();
-                playerTurn=2;
-                if (currentSuitP2 != nextSuitP2) {
-                    nextSuitP2 = currentSuitP2;
-                    currentSuitP2 = "";
-                } else {
-                    boolean isSnap = snapOpportunity();
-                    //System.out.println(isSnap);
-                    if (isSnap) {
-                        this.gamePlay=false;
-                        //System.out.println(gamePlay);
-                        break;
+            String currentSuitP1 = "";
+            String nextSuitP1 = " ";
+            String currentSuitP2 = "";
+            String nextSuitP2 = " ";
+            while (gamePlay) {
+                //System.out.println(gamePlay);
+                System.out.println("P1 press enter to deal card.");
+                Scanner myObj2 = new Scanner(System.in);
+                String inputP1 = myObj2.nextLine();
+                if (inputP1.equals("")) {
+                    System.out.println(dealCard());
+                    currentSuitP1 = returnSuit();
+                    playerTurn=1;
+                    if (currentSuitP1 != nextSuitP1) {
+                        nextSuitP1 = currentSuitP1;
+                        currentSuitP1 = "";
+                    } else {
+                        boolean isSnap = snapOpportunity();
+                        //System.out.println(isSnap);
+                        if (isSnap) {
+                            this.gamePlay=false;
+                            //System.out.println(gamePlay);
+                            break;
+                        }
+
+                        //gamePlay = false;
                     }
                 }
+                System.out.println("P2 press enter to deal card.");
+                Scanner myObj3 = new Scanner(System.in);
+                String inputP2 = myObj3.nextLine();
+                if (inputP2.equals("")) {
+                    System.out.println(dealCard());
+                    currentSuitP2 = returnSuit();
+                    playerTurn=2;
+                    if (currentSuitP2 != nextSuitP2) {
+                        nextSuitP2 = currentSuitP2;
+                        currentSuitP2 = "";
+                    } else {
+                        boolean isSnap = snapOpportunity();
+                        //System.out.println(isSnap);
+                        if (isSnap) {
+                            this.gamePlay=false;
+                            //System.out.println(gamePlay);
+                            break;
+                        }
+                    }
 
 
+                }
             }
+            System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
+            int playerAnswer = myObj.nextInt();
+            if (playerAnswer==1) {
+                playAgain=true;
+            } else if (playerAnswer==2){
+                playAgain=false;
+            }
+
+
         }
-    }
+         }
 
 }
 

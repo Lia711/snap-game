@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82691536-7047-4687-b3c8-444e1a81a9cf" name="Changes" comment="Removed timer due to bugs.">
+    <list default="true" id="82691536-7047-4687-b3c8-444e1a81a9cf" name="Changes" comment="Improved main menu logic.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SnapTwoPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SnapTwoPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Snap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Snap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685092242828</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Improved main menu logic.">
+      <created>1685093046632</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685093046632</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -152,6 +159,7 @@
     <MESSAGE value="Implemented two-player version of snap." />
     <MESSAGE value="Implemented snap opportunity: player wins if they correctly enter &quot;snap&quot; into the keyboard" />
     <MESSAGE value="Removed timer due to bugs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed timer due to bugs." />
+    <MESSAGE value="Improved main menu logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved main menu logic." />
   </component>
 </project>
