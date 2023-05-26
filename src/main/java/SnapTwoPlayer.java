@@ -2,11 +2,11 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class SnapTwoPlayer extends Snap {
+    Scanner scanner = new Scanner(System.in);
 
     public boolean snapOpportunity() {
         System.out.println("Snap Opportunity! Enter \"snap\" into the keyboard!");
-        Scanner snapObj = new Scanner(System.in);
-        String snap = snapObj.nextLine();
+        String snap = scanner.nextLine();
         if (snap.equals("snap")) {
             System.out.println("Congratulations! P" + playerTurn + " has won.");
             return true;
@@ -14,26 +14,25 @@ public class SnapTwoPlayer extends Snap {
         System.out.println("Incorrect! Continuing game...");
         return false;
     }
+
     boolean gamePlay = false;
     int playerTurn = 0;
 
     public void playGame() {
         boolean playAgain = true;
         while (playAgain) {
+            boolean gamePlay = false;
             makeDeck();
             boolean noBegin = true;
             while (noBegin) {
-                try {
-                    System.out.println("Press 1 to shuffle deck.");
-                    Scanner myObj2 = new Scanner(System.in);
-                    int begin = myObj2.nextInt();
-                    if (begin == 1) {
-                        System.out.println(shuffleDeck());
-                        gamePlay = true;
-                        noBegin = false;
-                    }
-                } catch (Exception e) {
-                    System.out.println("You must enter a valid number.");
+                System.out.println("Press 1 to shuffle deck.");
+                String begin = scanner.nextLine();
+                if (begin.equals("1")) {
+                    System.out.println(shuffleDeck());
+                    gamePlay = true;
+                    noBegin = false;
+                } else {
+                    System.out.println("Incorrect character, try again!");
                 }
             }
             String currentSuitP1 = "";
@@ -42,8 +41,7 @@ public class SnapTwoPlayer extends Snap {
             String nextSuitP2 = " ";
             while (gamePlay) {
                 System.out.println("P1 press enter to deal card.");
-                Scanner myObj2 = new Scanner(System.in);
-                String inputP1 = myObj2.nextLine();
+                String inputP1 = scanner.nextLine();
                 if (inputP1.equals("")) {
                     System.out.println(dealCard());
                     currentSuitP1 = returnSuit();
@@ -60,8 +58,7 @@ public class SnapTwoPlayer extends Snap {
                     }
                 }
                 System.out.println("P2 press enter to deal card.");
-                Scanner myObj3 = new Scanner(System.in);
-                String inputP2 = myObj3.nextLine();
+                String inputP2 = scanner.nextLine();
                 if (inputP2.equals("")) {
                     System.out.println(dealCard());
                     currentSuitP2 = returnSuit();
@@ -80,22 +77,21 @@ public class SnapTwoPlayer extends Snap {
             }
             boolean noNewGame = true;
             while (noNewGame) {
-                try {
-                    System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
-                    Scanner myObj5 = new Scanner(System.in);
-                    int playerAnswer = myObj5.nextInt();
-                    if (playerAnswer == 1) {
-                        playAgain = true;
-                        noNewGame = false;
-                    } else if (playerAnswer == 2) {
-                        playAgain = false;
-                        noNewGame = false;
-                    }
-                } catch (Exception e) {
-                    System.out.println("You must enter a valid number.");
+                System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
+                String playerAnswer = scanner.nextLine();
+                if (playerAnswer.equals("1")) {
+                    playAgain = true;
+                    noNewGame = false;
+                } else if (playerAnswer.equals("2")) {
+                    playAgain = false;
+                    noNewGame = false;
                 }
             }
         }
     }
 }
+
+
+
+
 

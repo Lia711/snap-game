@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Snap extends CardGame {
+    Scanner scanner = new Scanner(System.in);
 
     public void makeDeck() {
         for (Suits suit : Suits.values()) {
@@ -18,26 +19,22 @@ public class Snap extends CardGame {
             makeDeck();
             boolean noBegin = true;
             while (noBegin) {
-                try {
                     System.out.println("Press 1 to shuffle deck.");
-                    Scanner myObj2 = new Scanner(System.in);
-                    int begin = myObj2.nextInt();
-                    if (begin == 1) {
+                    String begin = scanner.nextLine();
+                    if (begin.equals("1")) {
                         System.out.println(shuffleDeck());
                         gamePlay = true;
                         noBegin = false;
+                    } else {
+                        System.out.println("Incorrect character, try again!");
                     }
-                } catch (Exception e) {
-                    System.out.println("You must enter a valid number.");
                 }
-            }
             String currentSuit = "";
             String nextSuit = " ";
             int turnCount = 0;
             while (gamePlay) {
                 System.out.println("Press enter to deal card.");
-                Scanner myObj2 = new Scanner(System.in);
-                String input = myObj2.nextLine();
+                String input = scanner.nextLine();
                 if (input.equals("")) {
                     System.out.println(dealCard());
                     currentSuit = returnSuit();
@@ -53,20 +50,16 @@ public class Snap extends CardGame {
             }
             boolean noNewGame = true;
             while (noNewGame) {
-                try {
                     System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
-                    Scanner myObj5 = new Scanner(System.in);
-                    int playerAnswer = myObj5.nextInt();
-                    if (playerAnswer == 1) {
+                    String playerAnswer = scanner.nextLine();
+                    if (playerAnswer.equals("1")) {
                         playAgain = true;
                         noNewGame = false;
-                    } else if (playerAnswer == 2) {
+                    } else if (playerAnswer.equals("2")) {
                         playAgain = false;
                         noNewGame = false;
-                    }
-
-                } catch (Exception e) {
-                    System.out.println("You must enter a valid number.");
+                    } else {
+                        System.out.println("Incorrect character, try again!");
                 }
             }
         }

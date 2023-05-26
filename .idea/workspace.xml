@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82691536-7047-4687-b3c8-444e1a81a9cf" name="Changes" comment="Tidied up code.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+    <list default="true" id="82691536-7047-4687-b3c8-444e1a81a9cf" name="Changes" comment="Cleaned up main for abstraction purposes.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Snap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Snap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SnapTwoPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SnapTwoPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,8 +160,26 @@
       <option name="project" value="LOCAL" />
       <updated>1685098712399</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Cleaned up main for abstraction purposes.">
+      <created>1685107191190</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685107191190</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Began setting up card creation" />
@@ -175,6 +195,7 @@
     <MESSAGE value="Improved main menu logic." />
     <MESSAGE value="Made all games replayable." />
     <MESSAGE value="Tidied up code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tidied up code." />
+    <MESSAGE value="Cleaned up main for abstraction purposes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up main for abstraction purposes." />
   </component>
 </project>
