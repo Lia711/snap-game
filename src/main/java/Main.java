@@ -12,7 +12,7 @@ public class Main {
             System.out.println(snap.getDeck());
         }
         while (noGame) {
-            System.out.println("Options:\nPress 1 to shuffle deck.\nPress 2 to sort cards by value.\nPress 3 to sort cards by suit.\nPress 4 to play a game of snap.");
+            System.out.println("Options:\nPress 1 to shuffle deck.\nPress 2 to sort cards by value.\nPress 3 to sort cards by suit.\nPress 4 to play a single player game of snap.\nPress 5 to play a two player game of snap.");
             Scanner myObj2 = new Scanner(System.in);
             int number2 = myObj2.nextInt();
             if (number2 == 1) {
@@ -23,14 +23,15 @@ public class Main {
                 System.out.println(snap.sortCardsBySuit());
             } else if (number2 == 4) {
                 noGame=false;
+                snap.playGame();
+            } else if (number2 == 5) {
+                noGame=false;
                 snap2.playGame();
-            }
-
         }
 
     }
 
 
-        }
+        }}
 
 

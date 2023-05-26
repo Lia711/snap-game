@@ -2,11 +2,6 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class SnapTwoPlayer extends Snap {
-    boolean gamePlay = false;
-
-    int playerTurn=0;
-
-    //TimedAnswer snapp = new TimedAnswer();
 
     public boolean snapOpportunity() throws Exception {
         //snapp.getInput();
@@ -15,13 +10,18 @@ public class SnapTwoPlayer extends Snap {
         String snap = snapObj.nextLine();
         //System.out.println(snapp.returnStr());
         if (snap.equals("snap")) {
-                System.out.println("Congratulations! P" + playerTurn + " has won.");
-               return true;
-            }
+            System.out.println("Congratulations! P" + playerTurn + " has won.");
+            return true;
+        }
         System.out.println("Incorrect! Continuing game...");
         return false;
 
-        }
+    }
+    //boolean newGame = true;
+    boolean gamePlay = false;
+    int playerTurn=0;
+
+    //TimedAnswer snapp = new TimedAnswer();
 
     public void playGame() throws Exception {
         makeDeck();
@@ -84,7 +84,7 @@ public class SnapTwoPlayer extends Snap {
 
             }
         }
-        System.out.println("continue");
     }
+
 }
 
