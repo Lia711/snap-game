@@ -3,30 +3,24 @@ import java.util.Scanner;
 
 public class SnapTwoPlayer extends Snap {
 
-    public boolean snapOpportunity() throws Exception {
-        //snapp.getInput();
+    public boolean snapOpportunity() {
         System.out.println("Snap Opportunity! Enter \"snap\" into the keyboard!");
         Scanner snapObj = new Scanner(System.in);
         String snap = snapObj.nextLine();
-        //System.out.println(snapp.returnStr());
         if (snap.equals("snap")) {
             System.out.println("Congratulations! P" + playerTurn + " has won.");
             return true;
         }
         System.out.println("Incorrect! Continuing game...");
         return false;
-
     }
     boolean gamePlay = false;
-    int playerTurn=0;
+    int playerTurn = 0;
 
-    //TimedAnswer snapp = new TimedAnswer();
-
-    public void playGame() throws Exception {
+    public void playGame() {
         boolean playAgain = true;
         while (playAgain) {
             makeDeck();
-
             boolean noBegin = true;
             while (noBegin) {
                 try {
@@ -36,40 +30,33 @@ public class SnapTwoPlayer extends Snap {
                     if (begin == 1) {
                         System.out.println(shuffleDeck());
                         gamePlay = true;
-                        noBegin=false;
+                        noBegin = false;
                     }
-
                 } catch (Exception e) {
                     System.out.println("You must enter a valid number.");
                 }
-
             }
             String currentSuitP1 = "";
             String nextSuitP1 = " ";
             String currentSuitP2 = "";
             String nextSuitP2 = " ";
             while (gamePlay) {
-                //System.out.println(gamePlay);
                 System.out.println("P1 press enter to deal card.");
                 Scanner myObj2 = new Scanner(System.in);
                 String inputP1 = myObj2.nextLine();
                 if (inputP1.equals("")) {
                     System.out.println(dealCard());
                     currentSuitP1 = returnSuit();
-                    playerTurn=1;
+                    playerTurn = 1;
                     if (currentSuitP1 != nextSuitP1) {
                         nextSuitP1 = currentSuitP1;
                         currentSuitP1 = "";
                     } else {
                         boolean isSnap = snapOpportunity();
-                        //System.out.println(isSnap);
                         if (isSnap) {
-                            this.gamePlay=false;
-                            //System.out.println(gamePlay);
+                            this.gamePlay = false;
                             break;
                         }
-
-                        //gamePlay = false;
                     }
                 }
                 System.out.println("P2 press enter to deal card.");
@@ -78,21 +65,17 @@ public class SnapTwoPlayer extends Snap {
                 if (inputP2.equals("")) {
                     System.out.println(dealCard());
                     currentSuitP2 = returnSuit();
-                    playerTurn=2;
+                    playerTurn = 2;
                     if (currentSuitP2 != nextSuitP2) {
                         nextSuitP2 = currentSuitP2;
                         currentSuitP2 = "";
                     } else {
                         boolean isSnap = snapOpportunity();
-                        //System.out.println(isSnap);
                         if (isSnap) {
-                            this.gamePlay=false;
-                            //System.out.println(gamePlay);
+                            this.gamePlay = false;
                             break;
                         }
                     }
-
-
                 }
             }
             boolean noNewGame = true;
@@ -101,23 +84,18 @@ public class SnapTwoPlayer extends Snap {
                     System.out.println("Press 1 to play again. Press 2 to go back to main menu.");
                     Scanner myObj5 = new Scanner(System.in);
                     int playerAnswer = myObj5.nextInt();
-                    if (playerAnswer==1) {
-                        playAgain=true;
-                        noNewGame=false;
-                    } else if (playerAnswer==2){
-                        playAgain=false;
-                        noNewGame=false;
+                    if (playerAnswer == 1) {
+                        playAgain = true;
+                        noNewGame = false;
+                    } else if (playerAnswer == 2) {
+                        playAgain = false;
+                        noNewGame = false;
                     }
-
                 } catch (Exception e) {
                     System.out.println("You must enter a valid number.");
                 }
-
             }
-
-
         }
-         }
-
+    }
 }
 

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82691536-7047-4687-b3c8-444e1a81a9cf" name="Changes" comment="Made all games replayable.">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Snap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Snap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SnapTwoPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SnapTwoPlayer.java" afterDir="false" />
     </list>

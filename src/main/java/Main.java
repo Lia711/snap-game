@@ -1,6 +1,7 @@
 import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         SnapTwoPlayer snap2 = new SnapTwoPlayer();
         Snap snap = new Snap();
         boolean noBegin = true;
@@ -12,16 +13,13 @@ public class Main {
                 if (generate == 1) {
                     snap.makeDeck();
                     System.out.println(snap.getDeck());
-                    noBegin=false;
+                    noBegin = false;
                 }
-
             } catch (Exception e) {
                 System.out.println("You must enter a valid number.");
             }
-
         }
         boolean noGame = true;
-
         while (noGame) {
             try {
                 System.out.println("Options:\nPress 1 to shuffle deck.\nPress 2 to sort cards by value.\nPress 3 to sort cards by suit.\nPress 4 to play a single player game of snap.\nPress 5 to play a two player game of snap.");
@@ -34,23 +32,19 @@ public class Main {
                 } else if (number2 == 3) {
                     System.out.println(snap.sortCardsBySuit());
                 } else if (number2 == 4) {
-                    noGame=false;
+                    noGame = false;
                     snap.playGame();
-                    noGame=true;
+                    noGame = true;
                 } else if (number2 == 5) {
-                    noGame=false;
+                    noGame = false;
                     snap2.playGame();
-                    noGame=true;
+                    noGame = true;
                 } else System.out.println("Please enter a number between 1 and 5.");
-
             } catch (Exception e) {
                 System.out.println("You must enter a valid number.");
             }
-
-
+        }
     }
-
-
-        }}
+}
 
 
