@@ -1,4 +1,4 @@
-# snap-game
+# Snap Game
 
 Features:
 - creation of full deck of 52 cards
